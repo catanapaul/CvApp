@@ -7,24 +7,32 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavComponent } from './nav/nav.component';
 import { FormsModule } from '@angular/forms';
-import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { HomeComponent } from './home/home.component';
 import { RegisterComponent } from './register/register.component';
+import { ProjectListComponent } from './projects/project-list/project-list.component';
+import { AboutmeComponent } from './aboutme/aboutme.component';
+import { ContactComponent } from './contact/contact.component';
+import { ProjectDetailComponent } from './projects/project-detail/project-detail.component';
+import { SharedModule } from './_modules/shared.module';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavComponent,
     HomeComponent,
-    RegisterComponent
+    RegisterComponent,
+    ProjectListComponent,
+    AboutmeComponent,
+    ContactComponent,
+    ProjectDetailComponent
   ],
   imports: [
+    BrowserAnimationsModule,
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    BsDropdownModule.forRoot(),
-    BrowserAnimationsModule
+    SharedModule
   ],
   providers: [],
   bootstrap: [AppComponent]
