@@ -1,1 +1,23 @@
-<p>project-list works!</p>
+<div class="project-list">
+    <div class="project-card" *ngFor="let project of projects">
+      <div class="card-image">
+        <img [src]="project.photo || './assets/users.png'" class="card-img-top" alt="Project Image">
+      </div>
+      <h2>{{ project.projectName }}</h2>
+      <p>Status: <span class="highlight" [style.background]="GetStatusStyle(project.status)">{{ project.status }}</span></p>
+      <p>Tech: {{ project.tech }}</p>
+      <p>Difficulty: {{ project.difficulty }}</p>
+      <p>Time for Completion: {{ project.timeForCompletion }}</p>
+      <p>Category: {{ project.category }}</p>
+      <p>Tags: {{ project.tags }}</p>
+      <ul>
+        <li *ngFor="let item of project.includes" class="animated">{{ item }}</li>
+      </ul>
+      <p>Goal: {{ project.goal }}</p>
+      <p>Views: {{ project.views }}</p>
+      <div class="buttons">
+        <button type="button" class="like-button"><i class="fa fa-heart"></i></button>
+        <button type="button" class="details-button ms-3"><i class="fa fa-info-circle"></i></button>
+      </div>
+    </div>
+  </div>
